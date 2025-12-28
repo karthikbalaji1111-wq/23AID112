@@ -1,4 +1,4 @@
-signal = input("Enter traffic light colour: ").lower()
+signal = input("Enter traffic light colour: ")
 
 if signal == "red":
     print("STOP!")
