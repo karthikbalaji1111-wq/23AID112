@@ -375,63 +375,12 @@ q.enqueue(30)
 print(q.dequeue())
 ```
 
-## Question 3 
 
 
 
-# Queue using Stack
-
-## Problem
-Implement a queue using stack operations.
 
 
-
-## Theory
-Queue follows FIFO (First In First Out).  
-Stack follows LIFO (Last In First Out).  
-We use two stacks to reverse the order and simulate queue behavior.
-
-
-
-## Time Complexity
-Enqueue: O(1)  
-Dequeue: O(n)
-
-## Code (Python)
-
-```python
-class Queue:
-    def __init__(self):
-        self.stack1 = []
-        self.stack2 = []
-
-    def enqueue(self, x):
-        self.stack1.append(x)
-
-    def dequeue(self):
-        if not self.stack1:
-            return None
-
-        while self.stack1:
-            self.stack2.append(self.stack1.pop())
-
-        value = self.stack2.pop()
-
-        while self.stack2:
-            self.stack1.append(self.stack2.pop())
-
-        return value
-
-
-q = Queue()
-q.enqueue(10)
-q.enqueue(20)
-q.enqueue(30)
-
-print(q.dequeue())
-```
-
-## Question 4 
+## Question 3
 
 
 
@@ -482,7 +431,7 @@ serve_customer()
 serve_customer()
 ```
 
-## Question 5
+## Question 4
 
 
 
@@ -528,6 +477,67 @@ vehicle_arrives("Bus")
 signal_green()
 signal_green()
 signal_green()
+```
+
+
+
+## QUESTION 5
+
+# Queue Case Study Problem
+
+
+
+### Problem
+An online food app receives orders from customers.  
+Orders are prepared and delivered in the same order they are received.
+
+---
+
+## Theory
+Queue follows FIFO (First In First Out), so orders are processed in order of arrival.
+
+---
+
+## Time Complexity
+Enqueue: O(1)  
+Dequeue: O(1)
+
+---
+
+## Approach
+
+Steps:
+1. Use a queue to store orders  
+2. When order placed → enqueue  
+3. When order prepared → dequeue  
+4. Continue until all orders are processed  
+
+---
+
+## Code (Python)
+
+```python
+from collections import deque
+
+queue = deque()
+
+def place_order(order):
+    queue.append(order)
+    print("Order placed:", order)
+
+def prepare_order():
+    if queue:
+        print("Order delivered:", queue.popleft())
+    else:
+        print("No orders")
+
+
+place_order("Pizza")
+place_order("Burger")
+place_order("Pasta")
+
+prepare_order()
+prepare_order()
 ```
 
 
