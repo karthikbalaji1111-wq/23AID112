@@ -15,7 +15,7 @@
 
 
 
-# Difference Between Binary Tree and Graph
+### Difference Between Binary Tree and Graph
 
 | No | Binary Tree                                  | Graph                                      |
 |----|----------------------------------------------|--------------------------------------------|
