@@ -1,22 +1,22 @@
-# 🎵 Music Player using Doubly Linked List — Clean, Structured Documentation
+# Music Player using Doubly Linked List — Clean, Structured Documentation
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 This project simulates a **Music Player** using a **Doubly Linked List (DLL)**.
 
 Each song is a node with:
 - `next` → next song
 - `prev` → previous song
 
-👉 Enables:
-- ⏭ Forward navigation (Next)
-- ⏮ Backward navigation (Previous)
-- ❌ Efficient deletion of current song
+Enables:
+- Forward navigation (Next)
+- Backward navigation (Previous)
+- Efficient deletion of current song
 
 ---
 
-## 🧠 Why Doubly Linked List?
+## Why Doubly Linked List?
 
 | Requirement              | Why DLL fits                 |
 |--------------------------|------------------------------|
@@ -27,7 +27,7 @@ Each song is a node with:
 
 ---
 
-## 💻 Full Code
+## Full Code
 
 ```python
 class SongNode:
@@ -63,14 +63,14 @@ class MusicPlayer:
             print("Playlist is empty.")
             return
         self.is_playing = True
-        print(f"▶ Playing: {self.current.name}")
+        print(f"Playing: {self.current.name}")
 
     def pause(self):
         if not self.is_playing:
             print("No song is playing.")
             return
         self.is_playing = False
-        print(f"⏸ Paused: {self.current.name}")
+        print(f"Paused: {self.current.name}")
 
     def next_song(self):
         if self.current and self.current.next:
@@ -173,9 +173,9 @@ if __name__ == "__main__":
 
 ---
 
-## 🔍 Function-wise Explanation
+## Function-wise Explanation
 
-### 🧱 1. `SongNode`
+### 1. `SongNode`
 ```python
 class SongNode:
     def __init__(self, name):
@@ -188,7 +188,7 @@ class SongNode:
 
 ---
 
-### 🎮 2. `__init__` (MusicPlayer)
+### 2. `__init__` (MusicPlayer)
 ```python
 self.head = None
 self.current = None
@@ -202,7 +202,7 @@ self.is_playing = False
 
 ---
 
-### ➕ 3. `add_song()`
+### 3. `add_song()`
 - Adds a new node at the **end**.
 - Traverses to last node → links new node.
 - Time Complexity: **O(n)**.
@@ -226,7 +226,7 @@ self.is_playing = False
 
 ---
 
-### ▶️ 4. `play()`
+### 4. `play()`
 - Starts playback of `current`.
 - Guards against empty playlist.
 
@@ -237,12 +237,12 @@ self.is_playing = False
             print("Playlist is empty.")
             return
         self.is_playing = True
-        print(f"▶ Playing: {self.current.name}")
+        print(f"Playing: {self.current.name}")
 ```
 
 ---
 
-### ⏸ 5. `pause()`
+### 5. `pause()`
 - Toggles `is_playing` to False.
 - Prevents pausing when already paused.
 
@@ -253,12 +253,12 @@ self.is_playing = False
             print("No song is playing.")
             return
         self.is_playing = False
-        print(f"⏸ Paused: {self.current.name}")
+        print(f"Paused: {self.current.name}")
 ```
 
 ---
 
-### ⏭ 6. `next_song()`
+### 6. `next_song()`
 - Moves pointer: `current = current.next`.
 - Requires `current.next` to exist.
 - Time: **O(1)**.
@@ -274,7 +274,7 @@ self.is_playing = False
 
 ---
 
-### ⏮ 7. `prev_song()`
+### 7. `prev_song()`
 - Moves pointer backward using `prev`.
 - Time: **O(1)**.
 
@@ -289,7 +289,7 @@ self.is_playing = False
 ```
 ---
 
-### ❌ 8. `delete_song()` (Critical)
+### 8. `delete_song()` (Critical)
 Handles:
 1. Middle node → reconnect links
 2. Head node → shift head
@@ -323,7 +323,7 @@ Handles:
 
 ---
 
-### 📃 9. `show_playlist()`
+### 9. `show_playlist()`
 - Traverses from `head`.
 - Highlights current song using '---->'
 ```python
@@ -344,7 +344,7 @@ Handles:
 
 ---
 
-### 🎛 10. `main()`
+### 10. `main()`
 - Menu-driven loop for interaction.
 - Keeps program running until exit.
 
@@ -394,17 +394,17 @@ def main():
 ```
 ---
 
-## ⚔️ Key Takeaways
+## Key Takeaways
 - DLL enables **bidirectional navigation**.
 - `current` pointer controls the system.
 - Deletion requires careful **pointer updates**.
 
 ---
 
-## 💀 Mastery Outcome
+## Mastery Outcome
 If you understand this fully:
 - You can solve Linked List problems confidently
 - You understand pointer manipulation deeply
 - You can build real-world DS systems
 
----
+
