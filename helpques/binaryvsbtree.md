@@ -181,9 +181,30 @@ A Binary Tree is simple, flexible, and useful for in-memory operations but can b
 
 A B-Tree is complex but highly efficient for large-scale and disk-based systems, ensuring minimal height, fewer disk accesses, and consistently fast operations.
 
-👉 In short:
 
-Binary Tree → Conceptual + Simple  
-B-Tree → Practical + Scalable + Disk Optimized  
 
 ---
+
+
+
+
+# 📊 Binary Tree vs B-Tree
+
+| Feature | Binary Tree | B-Tree |
+|--------|------------|--------|
+| **Definition** | Tree where each node has at most 2 children | Self-balancing tree where each node can have multiple children |
+| **Children per node** | Max = 2 (left, right) | More than 2 (depends on order m) |
+| **Height** | Can become skewed (large height) | Always balanced (small height) |
+| **Balancing** | Not necessarily balanced | Automatically balanced |
+| **Search time** | O(n) worst case | O(log n) |
+| **Usage** | General purpose (BST, expression tree) | Databases and file systems |
+| **Node structure** | Contains one data element | Contains multiple keys |
+| **Traversal** | Inorder, Preorder, Postorder | Mostly level-wise / sorted access |
+| **Insertion** | Simple, no strict rules | Complex (splitting nodes required) |
+| **Deletion** | Simple | Complex (merging/redistribution) |
+| **Memory usage** | Less | More (stores multiple keys) |
+| **Disk usage** | Not optimized for disk | Optimized for disk access |
+| **Applications** | Expression trees, BST | Database indexing, file systems |
+
+---
+
